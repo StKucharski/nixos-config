@@ -1,0 +1,7 @@
+#private stuff
+modules/services/git_and_ssh.nix
+
+hosts/
+
+assets/
+

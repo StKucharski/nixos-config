@@ -1,0 +1,37 @@
+program_options:
+  tray: false
+  automount: true
+  notify: true
+  password_cache: 10
+
+device_config:
+  # Ignore EFI system partition only
+  - id_uuid: 687B-8E8F
+    ignore: true
+
+  # Ignore docker device-mapper volumes
+  - symlinks: /dev/mapper/docker-*
+    ignore: true
+
+  - symlinks: /dev/disk/by-id/dm-name-docker-*
+    ignore: true
+
+  # Ignore snap loop mounts
+  - loop_file: /var/lib/snapd/snaps/*
+    ignore: true
+
+  # Ignore all loop devices
+  - is_loop: true
+    ignore: true
+
+  # Ignore non-block devices
+  - is_block: false
+    ignore: true
+
+  # Ignore internal non-external devices (root disk partitions)
+  - is_external: false
+    ignore: true
+
+  # Mount everything else (including all pendrives)
+  - ignore: false
+    automount: true

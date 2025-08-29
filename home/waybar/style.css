@@ -1,0 +1,148 @@
+@define-color bg_main rgba(25, 25, 25, 0.65);
+@define-color bg_main_tooltip rgba(0, 0, 0, 0.7);
+@define-color bg_hover rgba(200, 200, 200, 0.3);
+@define-color bg_active rgba(100, 100, 100, 0.5);
+@define-color border_main rgba(255, 255, 255, 0.2);
+@define-color content_main white;
+@define-color content_inactive rgba(255, 255, 255, 0.25);
+@define-color warning_color #ffcc00;
+
+* {
+  text-shadow: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  font-family: "IBM Plex Mono", "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  min-height: 0;
+  min-width: 0;
+}
+
+window#waybar {
+  background: @bg_main;
+  border-top: 1px solid @border_main;
+  color: @content_main;
+}
+
+tooltip {
+  background: @bg_main_tooltip;
+  border-radius: 5px;
+  border: 1px solid @border_main;
+}
+tooltip label {
+  color: @content_main;
+}
+
+#custom-os_button {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 24px;
+  padding-left: 12px;
+  padding-right: 20px;
+  transition: all 0.25s ease;
+}
+#custom-os_button:hover {
+  background: @bg_hover;
+  color: @content_main;
+}
+
+#workspaces {
+  color: transparent;
+  margin: 0 6px;
+}
+#workspaces button {
+  padding: 3px 6px;
+  font-size: 24px;
+  color: @content_inactive;
+  transition: all 0.25s ease;
+}
+#workspaces button.focused {
+  color: @content_main;
+}
+#workspaces button.urgent {
+  background: rgba(255, 200, 0, 0.35);
+  border-bottom: 3px dashed @warning_color;
+  color: @warning_color;
+}
+#workspaces button:hover {
+  background: @bg_hover;
+  color: @content_main;
+}
+
+#taskbar button {
+  min-width: 15px;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+  margin: 0 2px;
+  padding: 0 8px;
+  color: white;
+  transition: all 0.25s ease;
+}
+#taskbar button.active {
+  border-bottom: 3px solid white;
+  background: @bg_active;
+}
+#taskbar button:hover {
+  border-bottom: 3px solid white;
+  background: @bg_hover;
+  color: @content_main;
+}
+
+#cpu, #disk, #memory {
+  padding: 3px;
+}
+
+#temperature {
+  color: transparent;
+  font-size: 0px;
+  transition: all 0.25s ease;
+}
+#temperature.critical {
+  padding-right: 3px;
+  color: @warning_color;
+  font-size: initial;
+  border-bottom: 3px dashed @warning_color;
+}
+
+#window {
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+#tray > .passive {
+  border-bottom: none;
+}
+#tray > .active {
+  border-bottom: 3px solid white;
+}
+#tray > .needs-attention {
+  border-bottom: 3px solid @warning_color;
+}
+#tray > widget {
+  transition: all 0.25s ease;
+}
+#tray > widget:hover {
+  background: @bg_hover;
+}
+
+#pulseaudio {
+  font-family: "JetBrainsMono Nerd Font";
+  transition: all 0.25s ease;
+}
+#pulseaudio:hover {
+  background: @bg_hover;
+}
+
+#network, #disk, #memory, #pulseaudio, #battery, #tray, #custom-idle-ctl, #cpu {
+  margin-left: 8px;
+  padding: 0 8px;
+  transition: all 0.25s ease;
+}
+#custom-playerctl {
+  margin-right: 80px; /* push it to the left */
+}
+#clock {
+  margin-right: 6px;
+}
+*:hover {
+  background: @bg_hover;
+}
