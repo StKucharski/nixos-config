@@ -6,6 +6,7 @@ The reason I decided to use this technology not anything else is that I am using
 # File Structure
 This could've been one file, (three if we count the flakes) but I decided to create modularized design which would make it easy for me to move around my config and add things to it.  
 ## Tree
+```
 .
 ├── flake.lock
 ├── flake.nix
@@ -47,6 +48,7 @@ This could've been one file, (three if we count the flakes) but I decided to cre
         ├── docker.nix
         ├── git_and_ssh.nix
         └── steam.nix
+```
 ## GitIgnore
 It can be easily noticed that hosts/ and assets/ and modules/servces/git_and_ssh.nix are not in this repo. Why would that be ? All of those files contain some sort of sensitive information. 
    
