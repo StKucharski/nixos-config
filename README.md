@@ -1,4 +1,7 @@
 # Description
+<img width="2876" height="1799" alt="image" src="https://github.com/user-attachments/assets/17deaccd-b2e6-4827-a6a8-faf377ec41a3" />
+<img width="2880" height="1787" alt="image" src="https://github.com/user-attachments/assets/2a3c04d2-ae0a-4c2a-ab6f-2cbb7a3ed8d7" />
+
 ## What is this?
 This repository contains my current NIXOS configuration files, which for those unfamiliar with NIXOS define declaratively my entire system. NIXOS systems are immutable by design so that configs such as this one can persist. These files declare everything on my system from packages to partitioning settings. Thanks to nix FLAKE files my system is fully reproducible down to the version of every package on it.
 ## The vision
