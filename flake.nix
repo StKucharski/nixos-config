@@ -28,6 +28,7 @@
           ./modules/services/git_and_ssh.nix
           ./modules/services/bluetooth.nix
           ./modules/services/docker.nix
+          ./modules/services/virt.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.users.cooke = import ./home/cooke.nix;
